@@ -1,0 +1,12 @@
+{
+	"Position": "Position",
+	"Company": "Company",
+	"Salary": "Salary",
+	"City": "City",
+	"PublicationDate": "Publication date",
+	"Views": "No. of views",
+	"million.one": "million",
+	"million.many": "million",
+	"BGColor": "thead bg-dark",
+	"Color": "white"
+}

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FormattedMessage, useIntl } from "react-intl";
 import Job from "./job";
 
 const JobsList = () => {
@@ -10,6 +11,7 @@ const JobsList = () => {
       salary: 4.5,
       city: "Bogotá, Colombia",
       date: "2019-03-26",
+      visits: 900,
     },
     {
       id: "0002",
@@ -18,6 +20,7 @@ const JobsList = () => {
       salary: 20,
       city: "Palo Alto, CA, USA",
       date: "2019-03-27",
+      visits: 1240,
     },
     {
       id: "0003",
@@ -26,20 +29,53 @@ const JobsList = () => {
       salary: 1,
       city: "Cali, Colombia",
       date: "2019-03-28",
+      visits: 800,
     },
   ]);
 
+  console.log(navigator.language);
+  const intl = useIntl();
   return (
+    
     <div>
       <table className="table">
-        <thead className="thead-dark">
+        <thead className={intl.formatMessage({ id: 'BGColor' })} >
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">Position</th>
-            <th scope="col">Company</th>
-            <th scope="col">Salary</th>
-            <th scope="col">City</th>
-            <th scope="col">Publication date</th>
+            <th scope="col">
+              <font color={intl.formatMessage({ id: 'Color' })}>
+                #
+              </font></th>
+            <th scope="col" color="white">
+              <font color={intl.formatMessage({ id: 'Color' })}>
+                <FormattedMessage id="Position"/>
+              </font>              
+            </th>
+            <th scope="col">
+            <font color={intl.formatMessage({ id: 'Color' })}>
+              <FormattedMessage id="Company"/>
+            </font>
+              
+            </th>
+            <th scope="col">
+            <font color={intl.formatMessage({ id: 'Color' })}>
+              <FormattedMessage id="Salary"/>
+            </font>
+            </th>
+            <th scope="col">
+            <font color={intl.formatMessage({ id: 'Color' })}>
+              <FormattedMessage id="City"/>
+            </font>
+            </th>
+            <th scope="col">
+            <font color={intl.formatMessage({ id: 'Color' })}>
+              <FormattedMessage id="PublicationDate"/>
+            </font>
+            </th>
+            <th scope="col">
+            <font color={intl.formatMessage({ id: 'Color' })}>
+              <FormattedMessage id="Views"/>
+            </font>
+            </th>
           </tr>
         </thead>
         <tbody>
